@@ -3,7 +3,7 @@ get-help Get-Help
 #2.	Пункт 1, но детальную справку, затем только примеры
 get-help Get-Help -Full
 #3.	Получите справку о новых возможностях в PowerShell 4.0 (или выше)
-get-help Get-Help -Functionality
+get-help about_Windows_PowerShell_5.0
 #4.	Получите все командлеты установки значений
 Get-Command -CommandType Cmdlet
 Get-Command -CommandType All
@@ -38,7 +38,7 @@ Get-Random
 (Get-Process explorer).StartTime.DayOfWeek
 #18.Откройте любой документ в MS Word (не важно как) и закройте его с помощью PowerShell
 $objWord = New-Object -Com Word.Application
-$objWord.Visible = $false 
+$objWord.Visible = $false #свойство видимости для объекта objWord принимает значение неправда. i.e мы не видим открытие и закрытие файла при исполнении кода
 $objDocument = $objWord.Documents.Open("C:\temp\1.docx")
 $objDocument.Close()
 $objWord.Quit()
